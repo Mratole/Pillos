@@ -1,64 +1,15 @@
 package Ventanas;
 
-import home.conectar;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 public class VerProveedor extends javax.swing.JDialog {
 
-    DefaultTableModel model;
-    
-    public VerProveedor(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-        setLocationRelativeTo(null);
-        buscar("");
+    public VerProveedor() {
+      
     }
     
     public void buscar(String valor){
-            
-        String [] titulos = {"ID","CLAVE","EMPRESA","RFC","SECTOR","DIRECCIÓN"};
-        String [] registros = new String[6];
-        
-        int x = 0;
-        String aux = null;
-        
-        String sql = "SELECT * FROM proveedores WHERE empresa LIKE '%"+valor+"%' or codigo LIKE '%"+valor+"%'";
-        
-        
-        model = new DefaultTableModel(null,titulos);
-        
-        conectar cc = new conectar();
-        Connection cn = cc.conexion();
-        
-        try {
-            Statement st = cn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
- 
-            while(rs.next()){
-                registros[0]=rs.getString("id");
-                registros[1]=rs.getString("codigo");
-                registros[2]=rs.getString("empresa");
-                registros[3]=rs.getString("rfc");
-                registros[4]=rs.getString("sector");
-                registros[5]=rs.getString("direccion");
-                model.addRow(registros);
-                x = rs.getRow();
-                aux = Integer.toString(x);
-                cantidad.setText(aux);
-            }
-            tabla.setModel(model);
-            
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, ex, "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
+             
     }
-
-    @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -196,34 +147,7 @@ public class VerProveedor extends javax.swing.JDialog {
     }//GEN-LAST:event_AceptarActionPerformed
 
     public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VerProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VerProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VerProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VerProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                VerProveedor dialog = new VerProveedor(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+       
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

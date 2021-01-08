@@ -34,6 +34,14 @@ public class Compras
         this.total = total;
 }
 
+    /**
+  * 
+     * @param id
+  */
+ public void setid(int id)
+ {
+     this.id = id;
+ }
  /**
   * @return the id
   */

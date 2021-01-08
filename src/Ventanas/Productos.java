@@ -58,12 +58,17 @@ public class Productos extends javax.swing.JDialog {
 
         jTextField1.setEditable(false);
         jTextField1.setText("1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("Código:");
+        jLabel3.setText("Id del proveedor:");
 
-        jLabel4.setText("Nombre:");
+        jLabel4.setText("Peso:");
 
-        jLabel5.setText("Descripción:");
+        jLabel5.setText("Tipo de producto:");
 
         jLabel6.setText("Cantidad:");
 
@@ -275,6 +280,10 @@ public class Productos extends javax.swing.JDialog {
     private void preKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_preKeyReleased
        
     }//GEN-LAST:event_preKeyReleased
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     public static void main(String args[]) {
         try {
